@@ -7,7 +7,7 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <div className='container mb-5'>
+        <div className='container mb-5 mt-5'>
             <div className='aline-border'></div>
 
             <div className='d-flex justify-content-between mt-5 mt-5 align-items-center'>

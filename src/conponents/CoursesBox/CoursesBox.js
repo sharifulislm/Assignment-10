@@ -1,23 +1,26 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-
-
+import { Navigate, useNavigate } from 'react-router-dom';
 
 import './CoursesBox.css';
 
 
 const CoursesBox = ({courses}) => {
 
-
-     
-    const{id,name,picture,price,documentation}=courses;
-    const navigete = useNavigate()
-
-    const StudentsComeing = (id) => {
-     
-        navigete(`/ChakOut/${id}`)
+const Navigate = useNavigate()
        
-    }
+    const{id,name,picture,price,documentation}=courses;
+
+    
+
+    const ShowDetails = id=> {
+        
+
+        Navigate(`/#ShowDetails${id}`)
+        }
+
+
+
+  
 
     return (
  <div className='col-12 col-md-6 col-lg-3 card-box'>
@@ -31,10 +34,11 @@ const CoursesBox = ({courses}) => {
 </div>
 <div className='d-flex justify-content-between'>
 
-<button onClick={()=> StudentsComeing(id)} className='btn-chacout'>Course</button>
+<button onClick={()=> ShowDetails(id)} className='btn-chacout'>Course</button>
 
 <h5 className='price'>Price: {price}$</h5>
 </div>
+
 
 
  </div>

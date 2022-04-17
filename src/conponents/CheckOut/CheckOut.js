@@ -1,0 +1,12 @@
+import React from 'react';
+
+const CheckOut = () => {
+    return (
+        <div>
+            <h1>this is ChekOut </h1>
+            
+        </div>
+    );
+};
+
+export default CheckOut;

@@ -1,12 +1,13 @@
 import React from 'react';
 
-const ChakOut = () => {
+const ShowDetails = () => {
     return (
         <div>
-            this is Privite 
+
+        <h1>this is Headdinng</h1>
             
         </div>
     );
 };
 
-export default ChakOut;
+export default ShowDetails;

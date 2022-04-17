@@ -4,4 +4,9 @@ background-image: url('../image/propaty.jpg');
 background-repeat: no-repeat;
 background-size:cover;
 padding: 250px 0px;
+
+}
+nav.navbar-box.navbar.navbar-expand-lg.navbar-dark.bg-light.sticky-top {
+    background-color: #051c5980 !important;
+    color: white !important;
 }

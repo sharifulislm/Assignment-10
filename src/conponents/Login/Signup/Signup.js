@@ -1,20 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../Login/Login.css';
 
 const Signup = () => {
+ 
+const [email,setEmail]=useState('');
+const [password,setPassword]=useState('');
+const [confirmpass,setConfirmpass]=useState('');
+
+
+const Handelemail = event => {
+  const email = event.target.value;
+  setEmail(email);
+}
+const HendelPassword = event => {
+    const password = event.target.value;
+    setPassword(password);
+}
+const HandelConfirmPassword = event => {
+    const ConfiramPassword = event.target.value;
+    console.log(ConfiramPassword);
+}
+const HandleSubmit =event => {
+    event.preventDefault();
+}
+
+
+
     return (
         <div className='submit-from signup mt-5'>
             <h5 className='text-center'>Create a New account</h5>
         <p className='text-center'>Please provide the following details.</p>
         <div>
-            <form action="">
+            <form onSubmit={HandleSubmit} action="">
         <label for="fname">Email Address</label> <br/>
-        <input className='ps-2 pt-1 pb-1' type="text" name="" id="" placeholder='Email'/> <br/>
+        <input onBlur={Handelemail} className='ps-2 pt-1 pb-1' type="text" name="" id="" placeholder='Email'/> <br/>
         <label for="lname">New Password </label> <br/>
-       <input className='ps-2 pt-1 pb-1' type="Password" placeholder='New Password' id='Password' /> <br/>
+       <input onBlur={HendelPassword} className='ps-2 pt-1 pb-1' type="Password" placeholder='New Password' id='Password' /> <br/>
         <label for="lname">Confirm New Password </label> <br/>
-       <input className='ps-2 pt-1 pb-1' type="Password" placeholder='Confirm New Password' id='Password' /> <br/>
+       <input onBlur={HandelConfirmPassword} className='ps-2 pt-1 pb-1' type="Password" placeholder='Confirm New Password' id='Password' /> <br/>
        <button className='login mt-3 '>SIGNUP</button>
        <small className='OR text-center'>OR</small>
        <p>Already have an account? <Link to="/Login">Login</Link> </p>
