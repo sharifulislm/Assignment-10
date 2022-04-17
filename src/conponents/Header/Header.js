@@ -22,9 +22,9 @@ const Header = () => {
 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 <Navbar.Collapse id="responsive-navbar-nav">
 <Nav className="me-auto">
-  <Nav.Link href="Home#Services">Services</Nav.Link>
-  <Nav.Link href="Home#Experts">Experts</Nav.Link>
-  <Nav.Link as={Link}to="Courses">Courses</Nav.Link>
+  <Nav.Link href="Services">Services</Nav.Link>
+  <Nav.Link href="Experts">Experts</Nav.Link>
+  {/* <Nav.Link as={Link}to="Courses">Courses</Nav.Link> */}
   <NavDropdown title="Blog" id="collasible-nav-dropdown">
     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
     <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>

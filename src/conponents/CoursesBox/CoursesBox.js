@@ -11,7 +11,7 @@ const navigate = useNavigate()
     const{id,name,picture,price,documentation}=courses;
 
     const navigatetoCourseDetails = id => {
-        navigate(`Courses/{id}`);
+        navigate(`Courses/${id}`);
     }
 
     

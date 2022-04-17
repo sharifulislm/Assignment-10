@@ -63,6 +63,7 @@ const HandleSubmit =event => {
         <p className='text-center'>Please provide the following details.</p>
         <div>
             <form onSubmit={HandleSubmit} action="">
+
         <label for="fname">Email Address</label> <br/>
         <input onBlur={Handelemail} className='ps-2 pt-1 pb-1' type="text" name="" id="" placeholder='Email'/> <br/>
         <label for="lname">New Password </label> <br/>
