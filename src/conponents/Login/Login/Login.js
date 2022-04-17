@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
@@ -13,7 +14,7 @@ const Login = () => {
            <input className='ps-2 pt-1 pb-1' type="Password" placeholder='Password' id='Password' /> <br/>
            <button className='login mt-3 '>SIGIN IN</button>
            <small className='OR text-center'>OR</small>
-           <p>Don't have an account? <a href=""> Create Account</a></p>
+           <p>Don't have an account? <Link to="/Signup"> Create Account</Link></p>
            </form>
                  
             </div>
