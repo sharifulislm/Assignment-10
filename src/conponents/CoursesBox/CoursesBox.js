@@ -1,22 +1,21 @@
 import React from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import './CoursesBox.css';
 
 
 const CoursesBox = ({courses}) => {
 
-const Navigate = useNavigate()
+const navigate = useNavigate()
        
     const{id,name,picture,price,documentation}=courses;
 
+    const navigatetoCourseDetails = id => {
+        navigate(`Courses/{id}`);
+    }
+
     
 
-    const ShowDetails = id=> {
-        
-
-        Navigate(`/#ShowDetails${id}`)
-        }
 
 
 
@@ -34,7 +33,7 @@ const Navigate = useNavigate()
 </div>
 <div className='d-flex justify-content-between'>
 
-<button onClick={()=> ShowDetails(id)} className='btn-chacout'>Course</button>
+<button onClick={() => navigatetoCourseDetails(id)} className='btn-chacout'>Course</button>
 
 <h5 className='price'>Price: {price}$</h5>
 </div>

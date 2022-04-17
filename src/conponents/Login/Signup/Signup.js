@@ -1,12 +1,40 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import '../Login/Login.css';
+import auth from '../../firebase.init';
+
+
 
 const Signup = () => {
- 
+    const navigate = useNavigate();
+  
 const [email,setEmail]=useState('');
 const [password,setPassword]=useState('');
 const [confirmpass,setConfirmpass]=useState('');
+
+let HendelError;
+const [
+    createUserWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useCreateUserWithEmailAndPassword(auth);
+
+  if (error) {
+    HendelError = <div>
+        <p>Error:{error.message}</p>
+      </div>
+    
+  }
+  if (loading) {
+    HendelError = <p>Loading...</p>;
+  }
+  if(user){
+    navigate("/HomePage");
+
+}
+  
 
 
 const Handelemail = event => {
@@ -19,10 +47,11 @@ const HendelPassword = event => {
 }
 const HandelConfirmPassword = event => {
     const ConfiramPassword = event.target.value;
-    console.log(ConfiramPassword);
+    setConfirmpass(ConfiramPassword);
 }
 const HandleSubmit =event => {
     event.preventDefault();
+    createUserWithEmailAndPassword(email, password)
 }
 
 
@@ -41,6 +70,7 @@ const HandleSubmit =event => {
        <input onBlur={HandelConfirmPassword} className='ps-2 pt-1 pb-1' type="Password" placeholder='Confirm New Password' id='Password' /> <br/>
        <button className='login mt-3 '>SIGNUP</button>
        <small className='OR text-center'>OR</small>
+       {HendelError}
        <p>Already have an account? <Link to="/Login">Login</Link> </p>
        </form>
              

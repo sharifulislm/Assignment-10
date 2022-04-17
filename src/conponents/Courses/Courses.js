@@ -15,7 +15,7 @@ const Courses = () => {
 
 
     return (
-        <div className='container'>
+        <div id='Courses' className='container'>
              <div className='contents-box text-center mt-6'>
               <h2 className='hadding  mt-5'> Our Most Popular Courses</h2>
              <div className='border-hadding'></div>
