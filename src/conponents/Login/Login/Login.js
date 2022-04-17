@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css';
@@ -11,6 +11,10 @@ const [password,setPassword]=useState('');
 
 const navigate = useNavigate()
 let HendelError;
+const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(
+  auth
+);
+
     const [
         signInWithEmailAndPassword,
         user,
@@ -56,10 +60,18 @@ let HendelError;
                 <form onSubmit={HandelLoginSubmit} action="">
             <label for="fname">Email Address</label> <br/>
             <input onBlur={Handelemail} className='ps-2 pt-1 pb-1' type="text" name="" id="" placeholder='Email'/> <br/>
-            <label for="lname">Password   <span className='forgot-password ps-1 mt-2 mb-2 m-0 p-0'><a href="#"> Forgot your password?</a></span></label> <br/>
+            <label for="lname">Password   <span className='forgot-password ps-1 mt-2 mb-2 m-0 p-0'>
+              
+              <button  onClick={async () => {
+            await sendPasswordResetEmail(email);
+              alert('Sent email');
+           }} className='forgot-btn'> Forgot your password?</button>
+           
+           </span></label> <br/>
            <input onBlur={HendelPassword} className='ps-2 pt-1 pb-1' type="Password" placeholder='Password' id='Password' /> <br/>
            <button className='login mt-3 '>SIGIN IN</button>
            <small className='OR text-center'>OR</small>
+           <p text-dengar>{HendelError}</p>
            <p>Don't have an account? <Link to="/Signup"> Create Account</Link></p>
            </form>
                  

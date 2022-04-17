@@ -4,7 +4,7 @@
     border: 1 solid red;
 
     padding: 25px;
-    height: 342px;
+    height: 100%;
 }
 .submit-from {
     margin: auto;
@@ -48,6 +48,12 @@ span.forgot-password.ps-1.m-0.p-0 a {
     text-decoration: none;
 }
 .submit-from.signup.mt-5 {
-    height: 500px;
+    height: 100%;
     
+}
+button.forgot-btn {
+    border: none;
+    background: none;
+    color: cornflowerblue;
+    font-weight: bold;
 }

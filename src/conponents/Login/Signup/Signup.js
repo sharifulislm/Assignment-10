@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import '../Login/Login.css';
 import auth from '../../firebase.init';
+import SocalIcon from './SocalIcon';
 
 
 
@@ -19,7 +20,7 @@ const [
     user,
     loading,
     error,
-  ] = useCreateUserWithEmailAndPassword(auth);
+  ] = useCreateUserWithEmailAndPassword(auth ,{sendEmailVerification:true});
 
   if (error) {
     HendelError = <div>
@@ -70,7 +71,8 @@ const HandleSubmit =event => {
        <input onBlur={HandelConfirmPassword} className='ps-2 pt-1 pb-1' type="Password" placeholder='Confirm New Password' id='Password' /> <br/>
        <button className='login mt-3 '>SIGNUP</button>
        <small className='OR text-center'>OR</small>
-       {HendelError}
+       <SocalIcon></SocalIcon>
+       <p className='text-danger'>   {HendelError}</p>
        <p>Already have an account? <Link to="/Login">Login</Link> </p>
        </form>
              
