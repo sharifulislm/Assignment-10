@@ -16,6 +16,7 @@ import ServiceDatials from './conponents/ServiceDatials/ServiceDatials';
 import CheckOut from './conponents/CheckOut/CheckOut';
 import KidsService from './conponents/KidsService/KidsService';
 import KidsDetals from './conponents/KidsTeaching/KidsDetals';
+import Blog from './conponents/Blog/Blog';
 
 
 
@@ -43,8 +44,8 @@ function App() {
   <Route path='KidsDetals'element={<RequireAuth> <KidsDetals></KidsDetals></RequireAuth>}></Route>
 
 
-  
   <Route path='Login' element={<Login></Login>} ></Route>
+  <Route path='Blog' element={<Blog></Blog>} ></Route>
   <Route path='KidsDetals' element={<KidsDetals></KidsDetals>} ></Route>
   <Route path='Signup' element={<Signup></Signup>} ></Route>
   <Route path='CheckOut' element={  <CheckOut></CheckOut>} ></Route>
