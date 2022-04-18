@@ -1,9 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const KidsTeaching = ({service}) => {
 
     const{id,name,picture,price,documentation,classTime}=service;
+ const navigate = useNavigate()
 
+ const HandleNavigate = ()=> {
+    navigate('/KidsDetals')
+   
+ }
  
 
     return (
@@ -19,7 +25,7 @@ const KidsTeaching = ({service}) => {
 </div>
 <div className='d-flex justify-content-between'>
 
-<button  className='btn-chacout'> 218 New Elephant Road,See more </button>
+<button onClick={HandleNavigate} className='btn-chacout'> 218 New Elephant Road, <span className='text-primary'> See more</span> </button>
 
 
 </div>

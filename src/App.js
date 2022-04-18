@@ -15,6 +15,7 @@ import ServiceDatials from './conponents/ServiceDatials/ServiceDatials';
 
 import CheckOut from './conponents/CheckOut/CheckOut';
 import KidsService from './conponents/KidsService/KidsService';
+import KidsDetals from './conponents/KidsTeaching/KidsDetals';
 
 
 
@@ -33,16 +34,18 @@ function App() {
       <Routes>
   <Route path='/' element={<HomePage></HomePage>}></Route>
   <Route path='Courses/:CoursesId' element={<ServiceDatials></ServiceDatials>}></Route>
-  {/* <Route path='KidsService' element={<KidsService></KidsService>}></Route> */}
+
   <Route path='HomePage' element={<HomePage></HomePage>}></Route>
   <Route path='Courses' element={<Courses></Courses>} ></Route>
   {/* <Route path='KidsTeaching' element={<KidsTeaching></KidsTeaching>} ></Route> */}
   <Route path='CheckOut'element={<RequireAuth> <CheckOut></CheckOut></RequireAuth>}></Route>
   <Route path='KidsService'element={<RequireAuth> <KidsService></KidsService></RequireAuth>}></Route>
+  <Route path='KidsDetals'element={<RequireAuth> <KidsDetals></KidsDetals></RequireAuth>}></Route>
 
 
   
   <Route path='Login' element={<Login></Login>} ></Route>
+  <Route path='KidsDetals' element={<KidsDetals></KidsDetals>} ></Route>
   <Route path='Signup' element={<Signup></Signup>} ></Route>
   <Route path='CheckOut' element={  <CheckOut></CheckOut>} ></Route>
 
