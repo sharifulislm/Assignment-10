@@ -7,13 +7,13 @@ const Home = () => {
         
         <div className='Home-page'>
        
-<div className='content-pera'>
+       {/* <div className='content-pera '> */}
  {/* <h1> Pre and Primary <br></br> Teacher Training Courses</h1> */}
- <h3>Welcome our teacherAcademy
-</h3>
- <p>Rapidiously expedite granular imperatives before economically sound web services. Credibly actualize pandemic strategic themeplatform</p>
+ {/* <h3>Welcome ourTeachingAcademy
+</h3> */}
+{/* <p>Rapidiously expedite granular imperatives before economically sound web services. Credibly actualize pandemic strategic themeplatform</p> */}
 
-</div>
+{/* </div> */}
         
             
         </div>

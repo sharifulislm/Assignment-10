@@ -1,9 +1,12 @@
 import React from 'react';
+import Profile from '../Profile/Profile';
 import './Blog.css';
 
 const Blog = () => {
     return (
         <div className='content-box'>
+
+             <Profile></Profile>
             
 
           <div className='text-content m-3 mt-5 mb-4'>
