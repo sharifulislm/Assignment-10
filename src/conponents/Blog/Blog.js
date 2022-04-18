@@ -1,15 +1,15 @@
 import React from 'react';
-import Profile from '../Profile/Profile';
+
 import './Blog.css';
 
 const Blog = () => {
     return (
         <div className='content-box'>
 
-             <Profile></Profile>
+         <h1 className='text-center m-auto'>Welcome to my Blog</h1>
             
 
-          <div className='text-content m-3 mt-5 mb-4'>
+          <div className='text-content m-3 mb-4'>
               <h1>1 Difference between authorization and authentication</h1>
           <p>
             In the digital world, authentication and authorization accomplish these same goals. Authentication is used to verify that users really are who they represent themselves to be. Once this has been confirmed, authorization is then used to grant the user permission to access different levels of information and perform specific functions, depending on the rules established for different types of users.

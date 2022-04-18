@@ -5,7 +5,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 
 const Profile = () => {
     return (
-        <div className='container'>
+        <div className='container mt-5 mb-5 p-3'>
            <div className='d-flex row justify-content-center align-items-center'> 
                
                <div className='col-12 col-lg-6 col-md-6'> <img className='w-75' src={img} alt="" /></div>

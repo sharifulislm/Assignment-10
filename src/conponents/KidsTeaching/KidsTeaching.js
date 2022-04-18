@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AiFillCaretRight } from "react-icons/ai";
+import './KidsTeachin.css';
 
 const KidsTeaching = ({service}) => {
 
@@ -25,7 +27,7 @@ const KidsTeaching = ({service}) => {
 </div>
 <div className='d-flex justify-content-between'>
 
-<button onClick={HandleNavigate} className='btn-chacout'> 218 New Elephant Road, <span className='text-primary'> See more</span> </button>
+<button onClick={HandleNavigate} className='btn-chacout-discover'> DISCOVER MORE <AiFillCaretRight></AiFillCaretRight> </button>
 
 
 </div>

@@ -28,11 +28,13 @@ const Header = () => {
   <Nav.Link as={Link}to="Blog">Blog</Nav.Link>
 
 
+
 </Nav>
 <Nav>
 
   
                              
+<Nav.Link as={Link}to="about">About</Nav.Link>
                                 {/* <button onClick={logout} className='btn btn-link text-dark text-decoration-none'>sign out</button> */}
                       { 
                       user ?      

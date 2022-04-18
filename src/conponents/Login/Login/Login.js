@@ -4,6 +4,9 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../../Loading/Loading';
 import './Login.css';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
@@ -28,7 +31,7 @@ const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(
 
       if (error ||error1) {
         HendelError = <div>
-            <p>Error:{error?.message} {error1?.message}</p>
+            <p className='text-danger'>Error:{error?.message} {error1?.message}</p>
           </div>
         
       }
@@ -69,13 +72,19 @@ const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(
             <label for="lname">Password   <span className='forgot-password ps-1 mt-2 mb-2 m-0 p-0'>
               
               <button  onClick={async () => {
+          if(email) {
             await sendPasswordResetEmail(email);
-              alert('Sent email');
+            toast('Sent email');
+          }else{
+            await sendPasswordResetEmail(email);
+            toast('Please enter your email address');
+          }
            }} className='forgot-btn'> Forgot your password?</button>
            
            </span></label> <br/>
            <input onBlur={HendelPassword} className='ps-2 pt-1 pb-1' type="Password" placeholder='Password' id='Password' /> <br/>
            <button className='login mt-3 '>SIGIN IN</button>
+           <ToastContainer />
            <small className='OR text-center'>OR</small>
            <p text-dengar>{HendelError}</p>
            <p>Don't have an account? <Link to="/Signup"> Create Account</Link></p>
