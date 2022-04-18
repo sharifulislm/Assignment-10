@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import './ServiceDatials.css';
 
 const ServiceDatials = () => {
+    const [courses, setCourses]=useState([]);
     
     const {CoursesId}=useParams();
     console.log(CoursesId);
 
-    fetch('CoursesId')
+    fetch('https://raw.githubusercontent.com/sharifulislm/coaching-session/main/public/data.json')
     .then(res => res.json())
-    .then(data => console.log(data));
+    .then(data => setCourses(data));
+
+    const result = courses.filter(word => word.id === CoursesId);
+ 
+   
+    console.log(result);
 
     return (
-        <div>
+        <div className='Details-box m-auto'>
 
-            <h1>this is prams {CoursesId.length}</h1>
+            <h1 className='m-auto'> Our best Courses {CoursesId.length}</h1>
             <Link to="/CheckOut"> <button className='btn btn-primary'> chekout </button> </Link>
             
         </div>

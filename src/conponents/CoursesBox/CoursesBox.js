@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 import './CoursesBox.css';
 
 
@@ -33,7 +34,7 @@ const navigate = useNavigate()
 </div>
 <div className='d-flex justify-content-between'>
 
-<button onClick={() => navigatetoCourseDetails(id)} className='btn-chacout'>Course</button>
+<button onClick={() => navigatetoCourseDetails(id)} className='btn-chacout'> Check Out </button>
 
 <h5 className='price'>Price: {price}$</h5>
 </div>

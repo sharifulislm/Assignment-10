@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import '../Login/Login.css';
 import auth from '../../firebase.init';
 import SocalIcon from './SocalIcon';
+import Loading from '../../Loading/Loading';
 
 
 
 const Signup = () => {
-    const navigate = useNavigate();
+  
   
 const [email,setEmail]=useState('');
 const [password,setPassword]=useState('');
@@ -22,19 +23,24 @@ const [
     error,
   ] = useCreateUserWithEmailAndPassword(auth ,{sendEmailVerification:true});
 
+const navigate = useNavigate()
+const location = useLocation();
+let from = location.state?.from?.pathname || "/";
+
   if (error) {
     HendelError = <div>
         <p>Error:{error.message}</p>
       </div>
     
   }
-  if (loading) {
-    HendelError = <p>Loading...</p>;
+  if (loading ) {
+    return( <Loading></Loading>)
+   
   }
-  if(user){
-    navigate("/HomePage");
-
-}
+  if(user) {
+    navigate(from, { replace: true });
+  }
+ 
   
 
 

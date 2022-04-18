@@ -30,7 +30,7 @@ function App() {
   <Route path='HomePage' element={<HomePage></HomePage>}></Route>
   <Route path='Courses' element={<Courses></Courses>} ></Route>
   <Route path='CheckOut'element={<RequireAuth> <CheckOut></CheckOut></RequireAuth>}></Route>
-  {/* <Route path='Courses'element={<RequireAuth><Courses></Courses> </RequireAuth>}></Route> */}
+
 
   
   <Route path='Login' element={<Login></Login>} ></Route>

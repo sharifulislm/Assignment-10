@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../../Loading/Loading';
 import './Login.css';
 
 const Login = () => {
@@ -25,14 +26,15 @@ const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(
         error,
       ] = useSignInWithEmailAndPassword(auth);
 
-      if (error) {
+      if (error ||error1) {
         HendelError = <div>
-            <p>Error:{error.message}</p>
+            <p>Error:{error?.message} {error1?.message}</p>
           </div>
         
       }
-      if (loading) {
-        HendelError = <p>Loading...</p>;
+      if (loading || sending) {
+        return( <Loading></Loading>)
+       
       }
       if(user) {
         navigate(from, { replace: true });
