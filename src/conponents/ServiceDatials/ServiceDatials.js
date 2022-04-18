@@ -20,8 +20,9 @@ const ServiceDatials = () => {
     return (
         <div className='Details-box m-auto'>
 
-            <h1 className='m-auto'> Our best Courses {CoursesId.length}</h1>
-            <Link to="/CheckOut"> <button className='btn btn-primary'> chekout </button> </Link>
+            <h1 className='m-auto'> Our best Courses  {CoursesId.length}</h1>
+            <h3 className='mt-3'>Do you want to Continue</h3>
+            <Link to="/CheckOut"> <button className='btn btn-primary'> Continue </button> </Link>
             
         </div>
     );

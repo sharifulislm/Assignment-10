@@ -14,11 +14,17 @@ import ServiceDatials from './conponents/ServiceDatials/ServiceDatials';
 // import RequireAuth from './conponents/Login/RequireAuth/RequireAuth';
 
 import CheckOut from './conponents/CheckOut/CheckOut';
+import KidsService from './conponents/KidsService/KidsService';
+
 
 
 
 
 function App() {
+
+
+
+
   return (
     <div className="">
   
@@ -27,9 +33,12 @@ function App() {
       <Routes>
   <Route path='/' element={<HomePage></HomePage>}></Route>
   <Route path='Courses/:CoursesId' element={<ServiceDatials></ServiceDatials>}></Route>
+  {/* <Route path='KidsService' element={<KidsService></KidsService>}></Route> */}
   <Route path='HomePage' element={<HomePage></HomePage>}></Route>
   <Route path='Courses' element={<Courses></Courses>} ></Route>
+  {/* <Route path='KidsTeaching' element={<KidsTeaching></KidsTeaching>} ></Route> */}
   <Route path='CheckOut'element={<RequireAuth> <CheckOut></CheckOut></RequireAuth>}></Route>
+  <Route path='KidsService'element={<RequireAuth> <KidsService></KidsService></RequireAuth>}></Route>
 
 
   
@@ -44,12 +53,11 @@ function App() {
 
 
       </Routes>
-      <Footer></Footer>
+     
     
 
-
     
-
+<Footer></Footer>
 
 
     </div>
