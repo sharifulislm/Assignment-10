@@ -36,8 +36,9 @@ const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(
         return( <Loading></Loading>)
        
       }
-      if(user) {
-        navigate(from, { replace: true });
+      if(user)
+       {
+        return (navigate(from, { replace: true }));
       }
      
 
