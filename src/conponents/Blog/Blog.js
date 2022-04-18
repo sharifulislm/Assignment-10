@@ -6,7 +6,11 @@ const Blog = () => {
     return (
         <div className='content-box'>
 
-         <h1 className='text-center m-auto'>Welcome to my Blog</h1>
+<div className='contents-box text-center mt-6'>
+              <h2 className='hadding  mt-5'> Welcome to my Blog</h2>
+             <div className='border-hadding'></div>
+        </div>
+ 
             
 
           <div className='text-content m-3 mb-4'>
