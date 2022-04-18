@@ -1,9 +1,21 @@
 # TeachingAcademy
- [TeachingAcademy](https://github.com/facebook/create-react-app).
+ #TeachingAcademy [Projects link](https://teacheracademy-20bb9.web.app).
 
-## Available Scripts
+ 
+# This project created with 
+- Html
+- css
+- bootstrap
+- javascrept 
+- React 
+- React Route
+- Firebase 
 
-In the project directory, you can run:
+# this my best projects
+- this projects is dynamic 
+- You can login to this project
+
+
 
 ### `npm start`
 
